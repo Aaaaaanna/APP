@@ -1,0 +1,78 @@
+<div class = "container">
+    <form class = "form-horizontal" 
+       *ngIf ="employee" 
+     >
+        <div class = "form-group">
+            <label class="control-label col-sm-2 " for = "firstName">
+                First name: </label>
+            <div class = "col-sm-4">
+                <input type = "text" class = "form-control" id="firstName"
+                 [(ngModel)]="employee.firstName" name = "firstName"
+                 #name = "ngModel" >
+            </div>         
+        </div>    
+        <div class = "form-group">
+            <label class="control-label col-sm-2" for = "lastName">
+                 Last name: </label>
+            <div class = "col-sm-4">
+                 <input type = "text" class = "form-control" id="lastName"
+                 [(ngModel)]="employee.lastName" name = "lastName"
+                 #name = "ngModel" >
+            </div>         
+        </div>
+        <div class = "form-group">
+            <label class="control-label col-sm-2" for = "phoneNumber">
+                 Phone number: </label>
+            <div class = "col-sm-4">
+                 <input type = "text" class = "form-control" id="phoneNumber"
+                 [(ngModel)]="employee.phoneNumber" name = "phoneNumber"
+                 #name = "ngModel" >
+            </div>         
+        </div>
+        <div class = "form-group">
+            <label class="control-label col-sm-2" for = "mobileNumber">
+                 Mobile phone number: </label>
+            <div class = "col-sm-4">
+                 <input type = "text" class = "form-control" id="mobileNumber"
+                 [(ngModel)]="employee.mobileNumber" name = "mobileNumber"
+                 #name = "ngModel" >
+            </div>         
+        </div>
+        <div class = "form-group">
+            <label class="control-label col-sm-2" for = "officeAddress">
+                 Office address: </label>
+            <div class = "col-sm-4">
+                 <textarea class = "form-control" id="officeAddress"
+                 [(ngModel)]="employee.officeAddress" name = "officeAddress"
+                 #name = "ngModel" >></textarea>
+            </div>         
+        </div>
+        <div class = "form-group">
+            <label class="control-label col-sm-2" for = "emailAddress">
+                 Email: </label>
+            <div class = "col-sm-4">
+                 <input type = "text" class = "form-control" id="emailAddress"
+                 [(ngModel)]="employee.emailAddress" name = "emailAddress"
+                 #name = "ngModel" >
+            </div>         
+        </div>
+        <div class = "form-group">
+            <label class="control-label col-sm-2" for = "teamName">
+                 Select team: </label>
+            <div class = "col-sm-4">
+                <select class = "form-control" id="teamName" >
+                    <option *ngFor = 'let team of teams'> 
+                       ID:  {{team.teamId}} {{team.teamName}}
+                    </option>  
+                </select>
+            </div>         
+        </div>
+        <div class="form-group">        
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-default">Edit employee</button>
+            </div>
+        </div>
+  
+    </form>
+
+</div>    
