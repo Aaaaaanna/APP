@@ -19,7 +19,7 @@ var EmployeeService = (function () {
     function EmployeeService(_http) {
         this._http = _http;
         this._employeeUrl = 'http://localhost:8080/employees';
-        this.headers = new http_1.Headers({ 'Content-Type': 'application/json' });
+        this.headers = new http_1.Headers({ 'Content-Type': 'application/json;charset=UTF-8' });
     }
     EmployeeService.prototype.getEmployees = function () {
         return this._http.get(this._employeeUrl)

@@ -1,6 +1,6 @@
 import {ITeam} from '../teams/team';
 
-export interface IEmployee{
+export class IEmployee{
     employeeId: number; 
     teamId : ITeam;
 	firstName : string ;

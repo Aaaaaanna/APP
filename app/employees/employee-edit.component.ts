@@ -14,7 +14,10 @@ export class EmployeeEditComponent implements OnInit{
     errorMessage : string ;
     teams : ITeam[];
 
-    constructor (private _employeeService : EmployeeService , private _teamService: TeamService) {
+    constructor (private _employeeService : EmployeeService ,
+                 private _teamService: TeamService) {
+    
+        this.employee = new IEmployee();                     
     }
     ngOnInit() : void{
         this._employeeService.getEmployeeById(1)

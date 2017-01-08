@@ -9,6 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var employee_1 = require('./employee');
 var employee_service_1 = require('./employee.service');
 var team_service_1 = require('../teams/team.service');
 var EmployeeEditComponent = (function () {
@@ -16,6 +17,7 @@ var EmployeeEditComponent = (function () {
         this._employeeService = _employeeService;
         this._teamService = _teamService;
         this.pageTitle = 'Edit employee';
+        this.employee = new employee_1.IEmployee();
     }
     EmployeeEditComponent.prototype.ngOnInit = function () {
         var _this = this;

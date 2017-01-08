@@ -12,9 +12,8 @@ import { IEmployee } from './employee';
 
 @Injectable()
 export class EmployeeService {
-
     private _employeeUrl = 'http://localhost:8080/employees'; 
-    private headers = new Headers ({'Content-Type':'application/json'})
+    private headers = new Headers ({'Content-Type':'application/json;charset=UTF-8'})
     constructor (private _http: Http){
 
     }
@@ -38,10 +37,10 @@ export class EmployeeService {
         
     }
     addEmployee (employee : IEmployee){
-       
+        
         console.log(JSON.stringify(employee));
-
-        this._http.post(this._employeeUrl, JSON.stringify(employee), {headers:this.headers} )
+    
+        this._http.post(this._employeeUrl, JSON.stringify(employee),{headers:this.headers})
         .map( (response : Response) => <IEmployee> response.json())
         .do (data=>console.log('ALL'+ JSON.stringify(data) ))
         .catch(this.handleError)
