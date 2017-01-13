@@ -1,0 +1,23 @@
+<div class="container">
+    <form id="selectTeamForm" class="form-horizontal" #selectTeamForm="ngForm" role="form">
+        <div class="form-group">
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="employee">
+                    Select team: </label>
+                <div class="col-sm-4">
+                    <select id="team" class="form-control" [(ngModel)]="team" name="team" #teamId="ngModel">    
+                        <option *ngFor = 'let team of teams' [ngValue] ="team">
+                            {{team.teamId}} {{team.teamName}}  
+                        </option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-sm-4" style="display: inline-block">
+                <div class="col-sm-offset-8 col-sm-12">
+                    <button (click)="editTeam()" class="btn btn-default">Edit team</button>
+                    <button (click)="deleteTeam()" class="btn btn-default">Delete team</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

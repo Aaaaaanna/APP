@@ -26,9 +26,7 @@ export class NodeAddComponent implements OnInit {
             .subscribe(nodes => this.nodes = nodes,
             error => this.errorMessage = <any>error);
     }
-    onSubmit({value}:{value:INode}){
-        this.node = value;
-        
+    onSubmit(){
         console.log(JSON.stringify(this.node))
         this._nodeService.addNode(this.node)
         .subscribe(node => this.node = node);

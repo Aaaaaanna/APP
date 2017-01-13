@@ -9,36 +9,33 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var team_1 = require('./team');
+var team_service_1 = require('./team.service');
 var employee_service_1 = require('../employees/employee.service');
-var node_service_1 = require('./node.service');
-var node_1 = require('./node');
-var NodeAddComponent = (function () {
-    function NodeAddComponent(_employeeService, _nodeService) {
+var TeamAddComponent = (function () {
+    function TeamAddComponent(_teamService, _employeeService) {
+        this._teamService = _teamService;
         this._employeeService = _employeeService;
-        this._nodeService = _nodeService;
-        this.pageTitle = 'Add node';
-        this.node = new node_1.INode();
+        this.pageTitle = "Add team";
+        this.team = new team_1.ITeam();
     }
-    NodeAddComponent.prototype.ngOnInit = function () {
+    TeamAddComponent.prototype.ngOnInit = function () {
         var _this = this;
         this._employeeService.getEmployees()
             .subscribe(function (employees) { return _this.employees = employees; }, function (error) { return _this.errorMessage = error; });
-        this._nodeService.getNodes()
-            .subscribe(function (nodes) { return _this.nodes = nodes; }, function (error) { return _this.errorMessage = error; });
     };
-    NodeAddComponent.prototype.onSubmit = function () {
+    TeamAddComponent.prototype.onSubmit = function () {
         var _this = this;
-        console.log(JSON.stringify(this.node));
-        this._nodeService.addNode(this.node)
-            .subscribe(function (node) { return _this.node = node; });
+        this._teamService.addTeam(this.team)
+            .subscribe(function (team) { return _this.team = team; });
     };
-    NodeAddComponent = __decorate([
+    TeamAddComponent = __decorate([
         core_1.Component({
-            templateUrl: 'app/nodes/node-add.component.html'
+            templateUrl: 'app/teams/team-add.component.html'
         }), 
-        __metadata('design:paramtypes', [employee_service_1.EmployeeService, node_service_1.NodeService])
-    ], NodeAddComponent);
-    return NodeAddComponent;
+        __metadata('design:paramtypes', [team_service_1.TeamService, employee_service_1.EmployeeService])
+    ], TeamAddComponent);
+    return TeamAddComponent;
 }());
-exports.NodeAddComponent = NodeAddComponent;
-//# sourceMappingURL=node-add.component.js.map
+exports.TeamAddComponent = TeamAddComponent;
+//# sourceMappingURL=team-add.component.js.map

@@ -1,18 +1,15 @@
 <div class="container">
-    <form id="nodeForm" (ngSubmit)="onSubmit(nodeForm)" 
-    class="form-horizontal" #nodeForm="ngForm" role="form">
+    <form id="nodeForm" (ngSubmit)="onSubmit()" class="form-horizontal" #nodeForm="ngForm" role="form">
         <div class="form-group">
             <div class="form-group">
                 <label class="control-label col-sm-2" for="parentNode">
                    Select parent node: </label>
                 <div class="col-sm-4">
-                    <select id="parentNode2" class="form-control" 
-                    [(ngModel)]="node.parentNode" name="parentNode2"
-                     #parentNode2="ngModel">    
-                        <option value=""></option>
-                       <option *ngFor = 'let parentNode of nodes' [ngValue] ="parentNode">
-                            {{parentNode.nodeId}} {{parentNode.employee.employeeId}} {{parentNode.employee.firstName}} {{parentNode.employee.lastName}}   
-                        </option> 
+                    <select id="parentNode2" class="form-control" [(ngModel)]="node.parentNode" name="parentNode2" #parentNode="ngModel">
+                    <option value=""></option>
+                    <option *ngFor='let parentNode of nodes' [ngValue]="parentNode">
+                        {{parentNode.nodeId}} {{parentNode.employee.employeeId}} {{parentNode.employee.firstName}} {{parentNode.employee.lastName}}
+                    </option>
                     </select>
                 </div>
             </div>
