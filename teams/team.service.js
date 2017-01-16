@@ -36,23 +36,39 @@ var TeamService = (function () {
         return this._http.post(this._teamUrl, JSON.stringify(team), { headers: this.headers })
             .map(function (response) { return response.json(); })
             .do(function (data) { return console.log('ALL' + JSON.stringify(data)); })
-            .catch(this.handleError);
+            .catch(this.handleAddError);
     };
     TeamService.prototype.updateTeam = function (team) {
         console.log(JSON.stringify(team));
         return this._http.put(this._teamUrl + '/' + team.teamId, JSON.stringify(team), { headers: this.headers })
             .map(function (response) { return response.json(); })
             .do(function (data) { return console.log('ALL' + JSON.stringify(data)); })
-            .catch(this.handleError);
+            .catch(this.handleUpdateError);
     };
     TeamService.prototype.deleteTeam = function (id) {
         return this._http.delete(this._teamUrl + '/' + id)
             .map(function (response) { return response.json(); })
             .do(function (data) { return console.log("ALL" + JSON.stringify(data)); })
-            .catch(this.handleError);
+            .catch(this.handleDeleteError);
     };
     TeamService.prototype.handleError = function (error) {
         console.error(error);
+        alert("Failed process team operation ");
+        return Observable_1.Observable.throw(error.json().error || 'Server error');
+    };
+    TeamService.prototype.handleUpdateError = function (error) {
+        console.error(error);
+        alert("Failed to update team");
+        return Observable_1.Observable.throw(error.json().error || 'Server error');
+    };
+    TeamService.prototype.handleAddError = function (error) {
+        console.error(error);
+        alert("Failed to add team");
+        return Observable_1.Observable.throw(error.json().error || 'Server error');
+    };
+    TeamService.prototype.handleDeleteError = function (error) {
+        console.error(error);
+        alert("Failed to delete team");
         return Observable_1.Observable.throw(error.json().error || 'Server error');
     };
     TeamService = __decorate([

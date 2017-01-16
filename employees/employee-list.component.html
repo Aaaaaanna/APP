@@ -30,7 +30,7 @@
                 </thead>
                 <tbody>
                     <tr *ngFor = 'let employee of employees | employeeFilter:listFilter ' >
-                        <td><a [routerLink] = "['/teams', employee.employeeId]">
+                        <td><a [routerLink] = "['/teams']">
                         {{employee.team.teamId}}</a></td>
                         <td> {{employee.firstName}}</td> 
                         <td>{{employee.lastName}}</td> 

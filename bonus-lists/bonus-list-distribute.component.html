@@ -1,0 +1,50 @@
+<div class='panel panel-primary'>
+    <div class='panel-heading' >
+        To distribute: {{toDistribute}} 
+    </div>
+    <div class='panel-heading' [hidden] = "sum==0 "  >
+        Distributed: {{sum}} 
+    </div>
+    <div class='panel-body'>
+         <div class='row'>
+            <div class = 'col-md-4' *ngIf="employee"> 
+                {{employee.firstName}} {{employee.lastName}}
+            </div>    
+        </div>
+        <form id="distributeForm" (ngSubmit)="onSubmit(); false" class="form-horizontal" #distributeForm="ngForm" role="form" 
+        (ngModelChange)="onChange($event)"> 
+        <div class='table-responsive'>
+            <table class='table' *ngIf='nodes && nodes.length'>
+                <thead>
+                    <tr>
+                        <th>Id </th>
+                        <th>First name</th>
+                        <th>Last name</th>
+                        <th>Own bonus</th>
+                        <th>Team bonus</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor='let node of nodes ; trackBy: node?.nodeId'>
+                        <td> {{node.employee.employeeId}}</td>
+                        <td> {{node.employee.firstName}} </td>
+                        <td> {{node.employee.lastName}}</td>
+                        <td> <input class = "form-control" class= "bonus-class" type = "number" name = "ownBonus{{node.nodeId}}" 
+                        [(ngModel)]= "node.ownBonus" #node.ownBonus = "ngModel" id ="ownBonus{{node.nodeId}}" required 
+                        (ngModelChange)="onChange($event)"
+                        ></td>
+                        <td> <input class = "form-control" class= "bonus-class" type = "number" name = "teamBonus{{node.nodeId}}" 
+                        [(ngModel)]= "node.teamBonus" #node.teamBonus = "ngModel" id= "teamBonus{{node.nodeId}}" 
+                        (ngModelChange)="onChange($event)"> </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10" >
+                    <button id = "SubmitButton" [disabled]="!distributeForm.form.valid || overloaded || distributeForm.form.pristine" type="submit" class="btn btn-default">Distribute</button>
+                </div>
+        </div>  
+        </form>
+    </div>
+</div>

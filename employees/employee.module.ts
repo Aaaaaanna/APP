@@ -10,8 +10,8 @@ import { EmployeeFilterPipe } from './employee-filter.pipe';
 import { EmployeeService } from './employee.service';
 import { EmployeeEditComponent } from './employee-edit.component';
 import { EmployeeSelectComponent } from './employee-select.component';
-import {TeamListComponent} from '../teams/team-list.component';
-
+import { TeamListComponent} from '../teams/team-list.component';
+import { SelectModule} from 'ng2-select/ng2-select';
 @NgModule({
     declarations: [
         EmployeeListComponent,
@@ -24,6 +24,7 @@ import {TeamListComponent} from '../teams/team-list.component';
         FormsModule,
         ReactiveFormsModule,
         CommonModule,
+        SelectModule,
         RouterModule.forChild([
             { path : 'employees', component : EmployeeListComponent },
             { path : 'addEmployee', component : EmployeeAddComponent  }, 

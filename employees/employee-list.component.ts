@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IEmployee } from './employee';
+import { Employee } from './employee';
 import { EmployeeService } from './employee.service';
 
 
@@ -9,7 +9,7 @@ import { EmployeeService } from './employee.service';
 })
 export class EmployeeListComponent implements OnInit {
     message : string;
-    employees : IEmployee[];
+    employees : Employee[];
     errorMessage : string;
     pageTitle : string = "Employee List";
     constructor (private _employeeService : EmployeeService) {

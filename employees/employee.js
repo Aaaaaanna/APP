@@ -1,8 +1,8 @@
 "use strict";
-var IEmployee = (function () {
-    function IEmployee() {
+var Employee = (function () {
+    function Employee() {
     }
-    return IEmployee;
+    return Employee;
 }());
-exports.IEmployee = IEmployee;
+exports.Employee = Employee;
 //# sourceMappingURL=employee.js.map

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ITeam } from './team';
+import { Team } from './team';
 import { TeamService } from './team.service';
 import { Router } from '@angular/router';
 
@@ -10,12 +10,12 @@ export class TeamSelectComponent implements OnInit {
     private pageTitle: String = "Select team";
     private errorMessage: String;
     private _teamUrl = 'http://localhost:3000';
-    private team: ITeam;
-    private teams: ITeam[];
+    private team: Team;
+    private teams: Team[];
 
     constructor(private _teamService: TeamService,
         private _router: Router) {
-            this.team = new ITeam();
+            this.team = new Team();
     }
 
     ngOnInit():void {

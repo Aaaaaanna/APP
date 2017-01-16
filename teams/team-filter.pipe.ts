@@ -1,15 +1,15 @@
 import { PipeTransform, Pipe } from '@angular/core';
 
-import { ITeam } from './team';
+import { Team } from './team';
 
 @Pipe ({
     name:'teamFilter'
 })
 export class TeamFilterPipe implements PipeTransform{
 
-    transform (value: ITeam[], filterBy: string): ITeam[] {
+    transform (value: Team[], filterBy: string): Team[] {
         filterBy = filterBy ? filterBy.toLocaleLowerCase() : null ;
-        return (filterBy ? value.filter((team : ITeam) =>
+        return (filterBy ? value.filter((team : Team) =>
             (team.teamName.toLocaleLowerCase().indexOf(filterBy) !== -1) ): value);
     }
 }

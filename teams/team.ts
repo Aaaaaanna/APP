@@ -1,8 +1,8 @@
-import {IEmployee} from '../employees/employee';
+import {Employee} from '../employees/employee';
 
 
-export class ITeam{
+export class Team{
     teamId : number;
-    teamManager : IEmployee;
+    teamManager : Employee;
     teamName : string;
 }

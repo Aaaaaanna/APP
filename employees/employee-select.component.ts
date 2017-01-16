@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IEmployee } from './employee';
+import { Employee } from './employee';
 import { EmployeeService } from './employee.service';
 import { Router } from '@angular/router';
 
@@ -8,14 +8,14 @@ import { Router } from '@angular/router';
 })
 export class EmployeeSelectComponent implements OnInit {
     private employeeUrl = 'http://localhost:3000';
-    private employees: IEmployee[];
-    private employee: IEmployee;
+    private employees: Employee[];
+    private employee: Employee;
     private errorMessage: string;
     private pageTitle: string = "Select employee";
     constructor(private _employeeService: EmployeeService,
         private _router: Router,
     ) {
-        this.employee = new IEmployee();
+        this.employee = new Employee();
     }
 
     ngOnInit(): void {

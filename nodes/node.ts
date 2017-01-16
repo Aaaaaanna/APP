@@ -1,9 +1,9 @@
-import { IEmployee } from '../employees/employee';
+import { Employee } from '../employees/employee';
 
-export class INode{
+export class Node{
     nodeId : number; 
-	parentNode : INode;
-	employee : IEmployee; 
+	parentNode : Node;
+	employee : Employee; 
 	ownBonus : number; 
 	teamBonus : number; 
 	level : number;

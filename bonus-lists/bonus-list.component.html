@@ -1,0 +1,32 @@
+<div class='panel panel-primary'>
+    <div class='panel-heading'>
+        {{pageTitle}}
+    </div>
+    <div class='panel-body'>
+        <div class='table-responsive'>
+            <table class='table' *ngIf='bonusLists && bonusLists.length'>
+                <thead>
+                    <tr>
+                        <th>Parent node </th>
+                        <th>Beginning date</th>
+                        <th>End date</th>
+                        <th>Description</th>
+                        <th>State</th>
+                        <th>Budget</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor='let bonus of bonusLists'>
+                        <td> {{bonus.node.employee.firstName}} {{bonus.node.employee.lastName}}
+                        </td>
+                        <td> {{bonus.beginningDate | date}}</td>
+                        <td> {{bonus.endDate | date }}</td>
+                        <td> {{bonus.description}}</td>
+                        <td> {{bonus.state}}</td>
+                        <td> {{bonus.budget}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

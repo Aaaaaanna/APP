@@ -17,7 +17,7 @@ var TeamAddComponent = (function () {
         this._teamService = _teamService;
         this._employeeService = _employeeService;
         this.pageTitle = "Add team";
-        this.team = new team_1.ITeam();
+        this.team = new team_1.Team();
     }
     TeamAddComponent.prototype.ngOnInit = function () {
         var _this = this;

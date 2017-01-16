@@ -1,8 +1,8 @@
 "use strict";
-var ITeam = (function () {
-    function ITeam() {
+var Team = (function () {
+    function Team() {
     }
-    return ITeam;
+    return Team;
 }());
-exports.ITeam = ITeam;
+exports.Team = Team;
 //# sourceMappingURL=team.js.map

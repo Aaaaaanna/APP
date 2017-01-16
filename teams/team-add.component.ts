@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ITeam } from './team';
-import { IEmployee } from '../employees/employee';
+import { Team } from './team';
+import { Employee } from '../employees/employee';
 import { TeamService } from './team.service';
 import { EmployeeService } from '../employees/employee.service';
 
@@ -11,13 +11,13 @@ import { EmployeeService } from '../employees/employee.service';
 })
 export class TeamAddComponent implements OnInit {
     pageTitle : String = "Add team";
-    team : ITeam; 
-    employees : IEmployee[];
+    team : Team; 
+    employees : Employee[];
     errorMessage : String;
 
     constructor (private _teamService : TeamService,
                  private _employeeService : EmployeeService ){
-                     this.team = new ITeam();
+                     this.team = new Team();
                  }
     ngOnInit(): void{
         this._employeeService.getEmployees()

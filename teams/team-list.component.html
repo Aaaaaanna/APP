@@ -27,7 +27,7 @@
                     <tr *ngFor ='let team of teams | teamFilter:listFilter'>
                         <td> {{team.teamId}}</td>
                         <td> {{team.teamName}}</td>
-                        <td> ID: {{team.teamManager.employeeId}} {{team.teamManager.firstName}} {{team.teamManager.lastName}}</td>
+                        <td *ngIf="team.teamManager != null"> ID: {{team.teamManager.employeeId}} {{team.teamManager.firstName}} {{team.teamManager.lastName}}</td>
                     </tr>
                 </tbody>
             </table>

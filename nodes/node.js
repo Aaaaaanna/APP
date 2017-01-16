@@ -1,8 +1,8 @@
 "use strict";
-var INode = (function () {
-    function INode() {
+var Node = (function () {
+    function Node() {
     }
-    return INode;
+    return Node;
 }());
-exports.INode = INode;
+exports.Node = Node;
 //# sourceMappingURL=node.js.map

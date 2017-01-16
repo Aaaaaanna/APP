@@ -19,7 +19,7 @@ var TeamEditComponent = (function () {
         this._employeeService = _employeeService;
         this._route = _route;
         this.pageTitle = 'Edit team';
-        this.team = new team_1.ITeam();
+        this.team = new team_1.Team();
     }
     TeamEditComponent.prototype.ngOnInit = function () {
         var _this = this;

@@ -1,45 +1,47 @@
-<div class = "container">
-    <form class = "form-horizontal">
+<div class="container">
+    <form class="form-horizontal" id = "bonusForm" (ngSubmit)="onSubmit()" #bonusForm="ngForm" role="form">
         <div class="form-group">
-                <label class="control-label col-sm-2" for="parentNode">
-                   Select node: </label>
-                <div class="col-sm-4">
-                    <select id="employee" class="form-control" [(ngModel)]="node.employee" name="employee" #employee="ngModel">    
-                        <option value=""></option>>
-                        <option *ngFor = 'let employee of employees' [ngValue] ="employee">
-                            {{employee.employeeId}} {{employee.firstName}} {{employee.lastName}} 
-                        </option>
-                    </select>
-                </div>
-            </div>  
-        <div class = "form-group">
-            <label class="control-label col-sm-2" for = "text">
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="date">
                  Set beginning date: </label>
-            <div class = "col-sm-4">
-                 <input type = "date" class = "form-control" id="BeginningDate">
-            </div>         
-        </div>
-        <div class = "form-group">
-            <label class="control-label col-sm-2" for = "text">
+                <div class="col-sm-4">
+                    <input type="date" class="form-control" id="beginningDate" name = "beginningDate" [(ngModel)] = "bonusList.beginningDate"
+                    #beginningDate = "ngModel"
+                    >
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="date">
                  Set end date: </label>
-            <div class = "col-sm-4">
-                 <input type = "date" class = "form-control" id="EndDate">
-            </div>         
-        </div>
-        <div class = "form-group">
-            <label class="control-label col-sm-2" for = "text">
+                <div class="col-sm-4">
+                    <input type="date" class="form-control" id="endDate" name = "endDate" [(ngModel)]  = "bonusList.endDate"
+                    #endDate = "ngModel"
+                    >
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="text">
                  Description: </label>
-            <div class = "col-sm-4">
-                 <input type = "text" class = "form-control" id="Description"
-                 placeholder="Enter bonus list description">
-            </div>         
-        </div>
-        <div class="form-group">        
-            <div class="col-sm-offset-2 col-sm-10">
-                <button type="submit" class="btn btn-default">Add bonus list </button>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" id="description" placeholder="Enter bonus list description"
+                    name = "description" [(ngModel)] ="bonusList.description" #description = "ngModel" 
+                    >
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="number">
+                 Budget for this bonus-list: </label>
+                <div class="col-sm-4">
+                    <input type="number" min ="0" class="form-control" id="budget" placeholder="Enter budget"
+                    name ="budget" [(ngModel)]  = "bonusList.budget" #budget = "ngModel"
+                    >
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-default">Add bonus list </button>
+                </div>
             </div>
         </div>
-  
     </form>
-
-</div>    
+</div>

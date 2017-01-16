@@ -1,12 +1,13 @@
-import {INode} from '../nodes/node';
+import {Node} from '../nodes/node';
 
-export interface IBonusList{
+export class BonusList{
     bonusListId : number;
 	node : Node ; 
 	state : string ; 
 	beginningDate : Date ;
 	endDate : Date ;
 	description :  string ; 
+	budget : number;
 	    
 
 }

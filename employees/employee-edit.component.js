@@ -19,7 +19,8 @@ var EmployeeEditComponent = (function () {
         this._teamService = _teamService;
         this._route = _route;
         this.pageTitle = 'Edit employee';
-        this.employee = new employee_1.IEmployee();
+        this.employee = new employee_1.Employee();
+        this.teams = new Array();
     }
     EmployeeEditComponent.prototype.ngOnInit = function () {
         var _this = this;

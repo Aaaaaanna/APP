@@ -17,7 +17,7 @@ var NodeAddComponent = (function () {
         this._employeeService = _employeeService;
         this._nodeService = _nodeService;
         this.pageTitle = 'Add node';
-        this.node = new node_1.INode();
+        this.node = new node_1.Node();
     }
     NodeAddComponent.prototype.ngOnInit = function () {
         var _this = this;

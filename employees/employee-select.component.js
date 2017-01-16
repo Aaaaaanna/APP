@@ -18,7 +18,7 @@ var EmployeeSelectComponent = (function () {
         this._router = _router;
         this.employeeUrl = 'http://localhost:3000';
         this.pageTitle = "Select employee";
-        this.employee = new employee_1.IEmployee();
+        this.employee = new employee_1.Employee();
     }
     EmployeeSelectComponent.prototype.ngOnInit = function () {
         var _this = this;

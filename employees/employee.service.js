@@ -36,24 +36,40 @@ var EmployeeService = (function () {
     EmployeeService.prototype.updateEmployee = function (employee) {
         return this._http.put(this._employeeUrl + '/' + employee.employeeId, JSON.stringify(employee), { headers: this.headers })
             .map(function (response) { return response.json(); })
-            .catch(this.handleError);
+            .catch(this.handleUpdateError);
     };
     EmployeeService.prototype.addEmployee = function (employee) {
         console.log(JSON.stringify(employee));
         return this._http.post(this._employeeUrl, JSON.stringify(employee), { headers: this.headers })
             .map(function (response) { return response.json(); })
             .do(function (data) { return console.log('ALL' + JSON.stringify(data)); })
-            .catch(this.handleError);
+            .catch(this.handleAddError);
     };
     EmployeeService.prototype.deleteEmployee = function (id) {
         console.log(id);
         return this._http.delete(this._employeeUrl + '/' + id)
             .map(function (res) { return res.json(); })
             .do(function (data) { return console.log('ALL' + JSON.stringify(data)); })
-            .catch(this.handleError);
+            .catch(this.handleDeleteError);
     };
     EmployeeService.prototype.handleError = function (error) {
         console.error(error);
+        alert("Failed process employee operation ");
+        return Observable_1.Observable.throw(error.json().error || 'Server error');
+    };
+    EmployeeService.prototype.handleUpdateError = function (error) {
+        console.error(error);
+        alert("Failed to update employee");
+        return Observable_1.Observable.throw(error.json().error || 'Server error');
+    };
+    EmployeeService.prototype.handleAddError = function (error) {
+        console.error(error);
+        alert("Failed to add employee");
+        return Observable_1.Observable.throw(error.json().error || 'Server error');
+    };
+    EmployeeService.prototype.handleDeleteError = function (error) {
+        console.error(error);
+        alert("Failed to delete employee");
         return Observable_1.Observable.throw(error.json().error || 'Server error');
     };
     EmployeeService = __decorate([

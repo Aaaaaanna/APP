@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IBonusList } from './bonus-list';
+import { BonusList } from './bonus-list';
 import { BonusListService } from './bonus-list.service';
 
 @Component({
@@ -8,7 +8,7 @@ import { BonusListService } from './bonus-list.service';
 })
 export class BonusListComponent implements OnInit {
     message : string;
-    bonusLists : IBonusList[];
+    bonusLists : BonusList[];
     errorMessage : string;
     pageTitle : string = "Bonus-list list";
     constructor (private _bonusListService : BonusListService){
@@ -18,5 +18,7 @@ export class BonusListComponent implements OnInit {
         this._bonusListService.getBonusLists()
             .subscribe(bonusLists => this.bonusLists = bonusLists,
             error => this.errorMessage = <any> error);
+    
     }
+
 }

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http, Response, Headers } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
-import { INode } from './node';
+import { Node } from './node';
 
 
 @Injectable()
@@ -11,16 +11,17 @@ export class NodeService {
     constructor(private _http: Http) {
 
     }
-    getNodes(): Observable<INode[]> {
+    getNodes(): Observable<Node[]> {
         return this._http.get(this._nodeUrl)
-            .map((response: Response) => <INode[]>response.json())
+            .map((response: Response) => <Node[]>response.json())
             .do(data => console.log('ALL ' + JSON.stringify(data)))
             .catch(this.handleError);
     }
-    addNode (node : INode) : Observable<INode>{
+    
+    addNode (node : Node) : Observable<Node>{
         console.log(JSON.stringify(node));
         return this._http.post(this._nodeUrl ,JSON.stringify(node), {headers: this.headers} )
-                .map((response : Response)=><INode> response.json())
+                .map((response : Response)=><Node> response.json())
                 .do( data => console.log('ALL' + JSON.stringify(data)))
                 .catch(this.handleError);
      }

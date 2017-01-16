@@ -18,7 +18,7 @@ var TeamSelectComponent = (function () {
         this._router = _router;
         this.pageTitle = "Select team";
         this._teamUrl = 'http://localhost:3000';
-        this.team = new team_1.ITeam();
+        this.team = new team_1.Team();
     }
     TeamSelectComponent.prototype.ngOnInit = function () {
         var _this = this;

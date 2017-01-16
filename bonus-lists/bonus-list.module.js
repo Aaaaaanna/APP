@@ -12,25 +12,32 @@ var core_1 = require('@angular/core');
 var forms_1 = require('@angular/forms');
 var common_1 = require('@angular/common');
 var router_1 = require('@angular/router');
-//import {BonusListComponent} from './bonus-list.component';
+var bonus_list_service_1 = require('./bonus-list.service');
+var bonus_list_component_1 = require('./bonus-list.component');
 var bonus_list_add_component_1 = require('./bonus-list-add.component');
+var bonus_list_distribute_component_1 = require('./bonus-list-distribute.component');
+var employee_list_component_1 = require('../employees/employee-list.component');
 var BonusListModule = (function () {
     function BonusListModule() {
     }
     BonusListModule = __decorate([
         core_1.NgModule({
             declarations: [
-                //        BonusListComponent,
-                bonus_list_add_component_1.BonusListAddComponent
+                bonus_list_component_1.BonusListComponent,
+                bonus_list_add_component_1.BonusListAddComponent,
+                bonus_list_distribute_component_1.BonusListDistributeComponent
             ],
             imports: [
                 forms_1.FormsModule,
                 common_1.CommonModule,
                 router_1.RouterModule.forChild([
-                    //          { path : 'bonus-lists', component : BonusListComponent },
+                    { path: 'bonusLists', component: bonus_list_component_1.BonusListComponent },
                     { path: 'addBonusList', component: bonus_list_add_component_1.BonusListAddComponent },
+                    { path: 'distribute', component: bonus_list_distribute_component_1.BonusListDistributeComponent },
+                    { path: 'employees', component: employee_list_component_1.EmployeeListComponent }
                 ])
-            ]
+            ],
+            providers: [bonus_list_service_1.BonusListService]
         }), 
         __metadata('design:paramtypes', [])
     ], BonusListModule);

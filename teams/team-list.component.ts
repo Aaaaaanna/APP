@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ITeam } from './team';
+import { Team } from './team';
 import { TeamService } from './team.service';
 
 
@@ -9,7 +9,7 @@ import { TeamService } from './team.service';
 })
 export class TeamListComponent implements OnInit {
     message : string;
-    teams : ITeam[];
+    teams : Team[];
     errorMessage : string;
     pageTitle : string = "Team List";
     constructor (private _teamService : TeamService) {

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { IEmployee } from './employee';
+import { Employee } from './employee';
 import { EmployeeService } from './employee.service';
-import { ITeam } from '../teams/team';
+import { Team } from '../teams/team';
 import { TeamService } from '../teams/team.service';
 
 @Component({
@@ -10,8 +10,8 @@ import { TeamService } from '../teams/team.service';
 
 export class EmployeeAddComponent implements OnInit{
     pageTitle : String = 'Add employee' ; 
-    teams : ITeam[];
-    employee : IEmployee;
+    teams : Team[];
+    employee : Employee;
     errorMessage : String;
 
 
@@ -20,7 +20,7 @@ export class EmployeeAddComponent implements OnInit{
 
                  )
     {
-        this.employee = new IEmployee();
+        this.employee = new Employee();
 
     }
 
@@ -34,7 +34,7 @@ export class EmployeeAddComponent implements OnInit{
    onSubmit()  { 
         console.log(this.employee);
         this._employeeService.addEmployee(this.employee)
-        .subscribe((employee : IEmployee) =>this.employee = employee)
+        .subscribe((employee : Employee) =>this.employee = employee)
     }
     
 

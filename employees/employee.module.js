@@ -20,6 +20,7 @@ var employee_service_1 = require('./employee.service');
 var employee_edit_component_1 = require('./employee-edit.component');
 var employee_select_component_1 = require('./employee-select.component');
 var team_list_component_1 = require('../teams/team-list.component');
+var ng2_select_1 = require('ng2-select/ng2-select');
 var EmployeeModule = (function () {
     function EmployeeModule() {
     }
@@ -36,6 +37,7 @@ var EmployeeModule = (function () {
                 forms_1.FormsModule,
                 forms_2.ReactiveFormsModule,
                 common_1.CommonModule,
+                ng2_select_1.SelectModule,
                 router_1.RouterModule.forChild([
                     { path: 'employees', component: employee_list_component_1.EmployeeListComponent },
                     { path: 'addEmployee', component: employee_add_component_1.EmployeeAddComponent },

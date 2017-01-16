@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ITeam } from '../teams/team';
+import { Team } from '../teams/team';
 import { TeamService } from '../teams/team.service';
 import { ActivatedRoute, Params  } from '@angular/router';
-import { IEmployee } from '../employees/employee';
+import { Employee } from '../employees/employee';
 import { EmployeeService } from '../employees/employee.service';
 @Component({
     templateUrl : 'app/teams/team-edit.component.html'
@@ -11,14 +11,14 @@ import { EmployeeService } from '../employees/employee.service';
 export class TeamEditComponent implements OnInit{
     pageTitle : String = 'Edit team' ; 
     errorMessage : string ;
-    team : ITeam;
-    employees : IEmployee[];
+    team : Team;
+    employees : Employee[];
     
 
     constructor (private _teamService : TeamService, 
                 private _employeeService : EmployeeService,
                 private _route : ActivatedRoute){
-                this.team = new ITeam();
+                this.team = new Team();
                 
     }
   
@@ -37,7 +37,7 @@ export class TeamEditComponent implements OnInit{
 
     onSubmit(){
         this._teamService.updateTeam(this.team)
-        .subscribe((team : ITeam) => this.team = team,
+        .subscribe((team : Team) => this.team = team,
         error => this.errorMessage = <any> error);
     }
 }

@@ -17,7 +17,7 @@ var EmployeeAddComponent = (function () {
         this._employeeService = _employeeService;
         this._teamService = _teamService;
         this.pageTitle = 'Add employee';
-        this.employee = new employee_1.IEmployee();
+        this.employee = new employee_1.Employee();
     }
     EmployeeAddComponent.prototype.ngOnInit = function () {
         var _this = this;

@@ -7,9 +7,8 @@
                 <div class="col-sm-4"> 
                     <select id="teamManager" class="form-control" 
                     [(ngModel)]="team.teamManager" 
-                    name="teamManager" #employee="ngModel" >  
+                    name="teamManager" #team.teamManager="ngModel" >  
                             <option *ngFor = 'let employee of employees' 
-                            [selected]="team.teamManager.employeeId === employee.employeeId"
                             [ngValue] = "employee"
                             >
                             {{employee.employeeId}} {{employee.firstName}} {{employee.lastName}} 
