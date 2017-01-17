@@ -9,4 +9,6 @@ export class Employee{
 	mobileNumber : string ;
 	officeAddress : string ;
 	emailAddress : string ;
+	login: string;
+	passworrd:string;
 }
